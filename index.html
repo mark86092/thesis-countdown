@@ -36,7 +36,11 @@ counter.prototype = {
 		var m = t[1] ? parseInt(t[1]) : 6;
 		var d = t[2] ? t[2] : 30;
 		this.target = new Date(y, m - 1, d);
-		this.unit = t[3] ? t[3] : "d";
+		var h = t[3] ? t[3] : 0;
+		var n = t[4] ? t[4] : 0;
+		var s = t[5] ? t[5] : 0;
+		this.target.setHours(h, n, s);
+		this.unit = t[6] ? t[6] : "d";
 
 		this.countdown();
 		var me = this;
